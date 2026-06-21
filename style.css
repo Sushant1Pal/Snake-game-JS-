@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
+:root{
+    --bg-primary-color:#1a1a1a;
+    --bg-fill-color:#d2d2d2;
+    --bg-food-color:#d80000;
+    
+
+
+    --text-primary-color:#f2f2f2;
+
+
+    /* Spacing varaibles */
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:40px;
+    --space-3xl:48px;
+
+    /* Border colors*/
+    --border-color-1:#b0a6a6;
+
+    /* Border Radius */
+    --border-radius-xs:4px;
+    --border-radius-sm:8px;
+    --border-radius-md:12px;
+    --border-radius-lg:16px;
+    --border-radius-xl:20px;
+    --border-radius-2xl:24px;
+}
+
+html{
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main,section{
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--space-md);
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+section{
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-md);
+}
+
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    padding: var(--space-md) var(--space-md);
+    border: 2px solid var(--border-color-1);
+    border-radius: var(--border-radius-sm);
+}
+
+.board{
+    flex-grow:1;
+    border: 2px solid var(--border-color-1);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows:repeat(auto-fill,minmax(50px,1fr)) ;
+    /* flex-wrap: wrap; */
+}
+
+.block{
+    /* width: 30px;
+    height: 30px; */
+    border: 1px solid rgb(102, 91, 91);
+    /* flex-shrink: 0; */
+    border-radius: var(--border-radius-2xl);
+}
+
+.fill{
+    background-color: var(--bg-fill-color);
+}
+
+.food{
+    background-color: var(--bg-food-color);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #24232330;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .start-game,
+.modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.modal .game-over{
+    display: none;
+}
